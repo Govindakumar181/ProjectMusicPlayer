@@ -37,6 +37,11 @@
              /* const pause = document.getElementById('stop') */
                 const music = document.querySelector('audio')
                 const img = document.getElementById("musicImg")
+                const prev = document.getElementById("prev")
+                const next = document.getElementById("next")
+                const artist = document.getElementById("artist")
+                const title = document.getElementById("title")
+
 
 
 
@@ -51,6 +56,38 @@
                         img.classList.remove('anime')
                     }
                 })
+
+                const songs = [
+                    {
+                        name: "GirlsLikeYou",
+                        title: "GirlsLikeYou",
+                        artist: "Maroon 5",
+                    },
+                    {
+                        name: "Scam1992",
+                        title: "Scam1992",
+                        artist: "Bjjs",
+                    },
+                    {
+                        name: "Villain",
+                        title: "Darkness",
+                        artist: "Heart of Darkness",
+                    },
+                ]
+
+                const LoadSongs = (songs) => {
+                    title.textContent = songs.title;
+                    artist.textContent = songs.artist;
+                    music.src = "music/"+songs.name+".mp3";
+                    img.src = "images/"+songs.name+".PNG";
+                }
+
+                LoadSongs(songs[1]);
+
+
+
+                next.addEventListener('click',nextSong())
+                prev.addEventListener('click',prevSong())
 
                 /* 
                 pause.addEventListener('click',()=>{
