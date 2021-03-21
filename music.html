@@ -16,7 +16,7 @@
             <h1 id="title">Girls Like That</h1>
             <h3 id="artist">Maroon 5</h3>
             <div class="img_container">
-                <img id="musicImg" src="./images/Goku.png" alt="music1">
+                <img id="musicImg" src="./images/GirlsLikeYou.PNG" alt="music1">
             </div>
 
             <audio src="./music/GirlsLikeYou.mp3"></audio>
@@ -82,12 +82,24 @@
                     img.src = "images/"+songs.name+".PNG";
                 }
 
-                LoadSongs(songs[1]);
+                /* LoadSongs(songs[1]); */
+                songIndex = 0
+                const nextSong = () =>{
+                    songIndex = (songIndex+1) % songs.length;
+                    LoadSongs(songs[songIndex])
+                    music.play()
+                }
+
+                const prevSong = () =>{
+                    songIndex = (songIndex-1+songs.length) % songs.length;
+                    LoadSongs(songs[songIndex])
+                    music.play()
+                }
 
 
 
-                next.addEventListener('click',nextSong())
-                prev.addEventListener('click',prevSong())
+                next.addEventListener('click',nextSong)
+                prev.addEventListener('click',prevSong)
 
                 /* 
                 pause.addEventListener('click',()=>{
