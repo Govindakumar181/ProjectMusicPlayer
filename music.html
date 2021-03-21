@@ -26,7 +26,7 @@
                 
                 <i class="fas fa-backward" id="prev" title="Previous"></i>
                 <i class="fas fa-music main_button" id="play" title="Play"></i>
-                <!-- <i class="fas fa-play main_button" id="play" title="Play"></i> -->
+                <!-- <i class="fas fa-play main_button" id="loop" title="Loop"></i> -->
                 <i class="fas fa-forward" id="next" title="Next"></i>
                 
 
@@ -36,6 +36,7 @@
                 const play = document.getElementById('play')
              /* const pause = document.getElementById('stop') */
                 const music = document.querySelector('audio')
+                const loop = document.querySelector("loop")
                 const img = document.getElementById("musicImg")
                 const prev = document.getElementById("prev")
                 const next = document.getElementById("next")
@@ -57,6 +58,22 @@
                     }
                 })
 
+/*                 function Loop(){
+                    music.loop = false
+                    music.load()
+                }
+
+                loop.addEventListener('click',()=>{
+                    if(Loop){
+                        music.loop = true
+                        music.load()
+                        play.classList.replace("fa-play","fa-backward")
+                    }else{
+                        music.loop = false
+                        music.load()
+                    }
+                })
+ */
                 const songs = [
                     {
                         name: "GirlsLikeYou",
