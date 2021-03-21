@@ -16,7 +16,7 @@
             <h1 id="title">Girls Like That</h1>
             <h3 id="artist">Maroon 5</h3>
             <div class="img_container">
-                <img src="./images/Goku.png" alt="music1">
+                <img id="musicImg" src="./images/Goku.png" alt="music1">
             </div>
 
             <audio src="./music/GirlsLikeYou.mp3"></audio>
@@ -25,11 +25,39 @@
             <div class="music_controls">
                 
                 <i class="fas fa-backward" id="prev" title="Previous"></i>
-                <i class="fas fa-play main_button" id="play" title="Play"></i>
-                <!-- <i class="fas fa-music main_button" id="play" title="Play"></i> -->
+                <i class="fas fa-music main_button" id="play" title="Play"></i>
+                <!-- <i class="fas fa-play main_button" id="play" title="Play"></i> -->
                 <i class="fas fa-forward" id="next" title="Next"></i>
+                
 
             </div>
+
+            <script>
+                const play = document.getElementById('play')
+             /* const pause = document.getElementById('stop') */
+                const music = document.querySelector('audio')
+                const img = document.getElementById("musicImg")
+
+
+
+                play.addEventListener('click',()=>{
+                    if (music.paused){
+                        music.play()
+                        play.classList.replace("fa-music","fa-pause")
+                        img.classList.add('anime')
+                    }else{
+                        music.pause()
+                        play.classList.replace("fa-pause","fa-music")
+                        img.classList.remove('anime')
+                    }
+                })
+
+                /* 
+                pause.addEventListener('click',()=>{
+                    music.pause()
+                }) */
+                
+            </script>
 
         </div>
     </div>
